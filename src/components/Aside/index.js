@@ -5,16 +5,13 @@ import './style.css';
 class Aside extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      categories: [],
-    };
+    this.state = { categories: [] };
   }
 
   componentDidMount() {
     api.getCategories().then((data) => this.setState({ categories: data }));
   }
 
-  //
   render() {
     const { categories } = this.state;
     const { click } = this.props;

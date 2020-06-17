@@ -4,7 +4,7 @@ import ProductList from './components/ProductList';
 import Aside from './components/Aside';
 
 class App extends Component {
-  click() {}
+  // click() {}
   render() {
     return (
       <div className="App">
