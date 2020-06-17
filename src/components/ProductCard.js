@@ -5,7 +5,7 @@ import Price from './cardComponents/Price';
 
 class ProductCard extends React.Component {
   render() {
-    const {productData} = this.props;
+    const { productData } = this.props;
     return (
       <div>
         <Image src={productData.thumbnail} alt={productData.title} />
