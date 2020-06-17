@@ -1,0 +1,26 @@
+.arrow {
+  display: flex;
+}
+
+.arrow img {
+  width: 50px;
+}
+
+.emptyBox img {
+  width: 180px;
+}
+
+p {
+  font-weight: bold;
+}
+
+.shoppingCart {
+  display: flex;
+  flex-direction: row;
+}
+
+.shoppingCart img {
+  height: 30px;
+  margin: 10px;
+  width: 30px;
+}
