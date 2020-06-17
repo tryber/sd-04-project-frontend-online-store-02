@@ -6,7 +6,7 @@ import LandingPage from './LandingPage';
 class ProductList extends React.Component {
   render() {
     const { productsData, query } = this.props;
-    if (!query) return <LandingPage />
+    if (!query) return <LandingPage />;
     if (!productsData || productsData.length === 0) return <NotFound />;
     return (
       <div>
