@@ -12,9 +12,7 @@ class App extends Component {
         {/* ProductList tem que receber os dados via props "productsData" */}
         <Header />
         <ProductList />
-        <Aside click={
-this.click
-} />
+        <Aside click={this.click} />
       </div>
     );
   }
