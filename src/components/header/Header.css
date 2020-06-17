@@ -3,9 +3,8 @@ img {
 }
 
 header {
-
-  display: flex;
-  background-color: yellow;
   align-items: center;
+  background-color: yellow;
+  display: flex;
   justify-content: space-around;
 }
