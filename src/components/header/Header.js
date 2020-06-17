@@ -5,7 +5,7 @@ import Image from '../cardComponents/Image';
 // import CardButton from '../cardComponents/CardComponents'
 import './Header.css';
 
-export default class Header extends React.Component {git 
+export default class Header extends React.Component {
   render() {
     const { inputValue } = this.props;
     return (
