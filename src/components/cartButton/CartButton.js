@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from '../cardComponents/Image';
-import './style.css';
+import './CartButton.css';
 
 class CartButton extends React.Component {
   render() {
