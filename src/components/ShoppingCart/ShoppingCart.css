@@ -10,10 +10,6 @@
   width: 180px;
 }
 
-p {
-  font-weight: bold;
-}
-
 .shoppingCart {
   display: flex;
   flex-direction: row;
