@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getCategories } from '../services/api'
 
-class aSide extends Component {
+class Aside extends Component {
   render() {
     return (
       <div>
@@ -11,4 +11,4 @@ class aSide extends Component {
   }
 }
 
-export default aSide;
+export default Aside;
