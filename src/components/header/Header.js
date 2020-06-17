@@ -2,10 +2,10 @@ import React from 'react';
 import Input from '../cardComponents/input';
 import Button from '../cardComponents/button';
 import Image from '../cardComponents/Image';
-//import CardButton from '../cardComponents/CardComponents'
+// import CardButton from '../cardComponents/CardComponents'
 import './Header.css';
 
-export default class Header extends React.Component {
+export default class Header extends React.Component {git 
   render() {
     const { inputValue } = this.props;
     return (
@@ -17,7 +17,7 @@ export default class Header extends React.Component {
         <div>
           <Input type="text" value={inputValue} test="query-input" />
           <Button text="Pesquisar" test="query-button" />
-          {/*<CardButton count={count} />*/}
+          {/* <CardButton count={count} />*/}
         </div>
       </header>
     );
