@@ -12,9 +12,12 @@ class ProductCard extends React.Component {
         <Image src={productData.thumbnail} alt={productData.title} />
         <Title name={productData.title} />
         <Price value={productData.price} />
-        <div data-testid="product-detail-link">
-          <Link to={`/details/${productData.id}`}>DETALHES</Link>
-        </div>
+        <Link
+          data-testid="product-detail-link"
+          to={`/details/${productData.id}/${productData.title}`}
+        >
+          DETALHES
+        </Link>
       </div>
     );
   }

@@ -6,25 +6,27 @@ import FormAvaliation from './FormAvaliation';
 class ProductDetails extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { data: {} };
+    this.state = { data: [] };
   }
 
   componentDidMount() {
     const { match } = this.props;
-    api.getItems(match.params.id).then((data) => {
-      this.setState({ data });
-    });
+    api
+      .getProductsFromCategoryAndQuery(match.params.id, match.params.id2)
+      .then((data) => {
+        this.setState({ data: data.results[0] });
+      });
   }
 
   render() {
     const { data } = this.state;
     return (
-      <div data-testid="product-detail-name">
-        <h2>{data.title}</h2>
+      <React.Fragment>
+        <h2 data-testid="product-detail-name">{data.title}</h2>
         <p>{data.price}</p>
         <Image src={data.thumbnail} alt={data.title} />
         <FormAvaliation />
-      </div>
+      </React.Fragment>
     );
   }
 }

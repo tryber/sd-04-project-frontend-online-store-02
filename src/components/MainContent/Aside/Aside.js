@@ -24,7 +24,7 @@ class Aside extends Component {
             data-testid="category"
             key={category.id}
             value={category.name}
-            onClick={() => handleClick(category.name)}
+            onClick={() => handleClick(category.id)}
           >
             {category.name}
           </button>
