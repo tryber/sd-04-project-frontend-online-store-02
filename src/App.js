@@ -11,7 +11,7 @@ class App extends Component {
     super(props);
     this.state = { query: false };
   }
-  // click() {}
+  // click() { }
 
   render() {
     const { query } = this.state;
