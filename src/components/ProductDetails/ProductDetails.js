@@ -1,6 +1,7 @@
 import React from 'react';
 import * as api from '../../services/api';
 import Image from '../cardComponents/Image';
+import FormAvaliation from './FormAvaliation'
 
 class ProductDetails extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class ProductDetails extends React.Component {
         <h2>{data.title}</h2>
         <p>{data.price}</p>
         <Image src={data.thumbnail} alt={data.title} />
+        <FormAvaliation />
       </div>
     );
   }
