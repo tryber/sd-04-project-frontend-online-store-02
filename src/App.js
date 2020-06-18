@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import ProductList from './components/ProductList';
-import Aside from './components/Aside';
-import Header from './components/header/Header';
+import Aside from './components/Aside/Index';
+import Header from './components/Header/Header';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 
 class App extends Component {

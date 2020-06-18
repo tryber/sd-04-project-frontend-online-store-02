@@ -1,0 +1,23 @@
+.row {
+  align-items: center;
+  display: flex;
+}
+.row img {
+  margin-left: 2vw;
+}
+input {
+  border-radius: 5px;
+  border: none;
+  box-sizing: border-box;
+  margin: 8px 0;
+  padding: 12px 20px;
+}
+
+header {
+  align-items: center;
+  background-color: rgb(107, 106, 106);
+  display: flex;
+  font-family: 'Oswald', sans-serif;
+  height: 10vh;
+  justify-content: space-around;
+}
