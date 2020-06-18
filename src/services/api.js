@@ -1,7 +1,13 @@
-const api = 'https://api.mercadolibre.com/sites/MLB/categories';
-
 export const getCategories = async () => {
-  const response = await fetch(api, { mode: 'cors' });
+  const response = await fetch(
+    'https://api.mercadolibre.com/sites/MLB/categories',
+  );
+  const data = await response.json();
+  return data;
+};
+
+export const getItems = async (itemID) => {
+  const response = await fetch(`https://api.mercadolibre.com/items/${itemID}`);
   const data = await response.json();
   return data;
 };
