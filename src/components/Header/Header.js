@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Input from '../cardComponents/Input';
 import Button from '../cardComponents/Button';
 import Image from '../cardComponents/Image';
-import CartButton from '../cartButton/CartButton';
+import CartButton from '../ShoppingCart/CartButton';
 import './Header.css';
 
 export default class Header extends React.Component {
@@ -25,7 +26,9 @@ export default class Header extends React.Component {
             placeholder="Digite aqui sua pesquisa"
           />
           <Button test="query-button">Pesquisar</Button>
-          <CartButton />
+          <Link to="/cart">
+            <CartButton />
+          </Link>
         </div>
       </header>
     );

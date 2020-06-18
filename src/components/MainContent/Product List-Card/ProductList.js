@@ -8,7 +8,7 @@ class ProductList extends React.Component {
   render() {
     const { productsData, query } = this.props;
     if (!query) return <LandingPage />;
-    if (!productsData || productsData.length === 0) return <NotFound />;
+    if (productsData.length === 0) return <NotFound />;
     return (
       <div>
         {productsData.map((eachProductData) => (
