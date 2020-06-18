@@ -4,8 +4,6 @@ import ProductList from './components/ProductList';
 import Aside from './components/Aside';
 import Header from './components/header/Header';
 
-import FormAvaliation from './components/FormAvaliation'
-
 class App extends Component {
   // click() {}
   render() {
@@ -15,7 +13,6 @@ class App extends Component {
         <Header />
         <ProductList />
         <Aside click={this.click} />
-        <FormAvaliation />
       </div>
     );
   }

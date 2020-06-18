@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './style.css';
 
 class Forms extends Component {
   constructor(props) {
@@ -18,18 +19,32 @@ class Forms extends Component {
 
   render() {
     const { quantidade } = this.state;
+    const { addItemCar } = this.props;
     return (
       <div>
-        <h3>Quantidade</h3>
-        <button onClick={() => this.lessProductsIncar()}>-</button>
-        <div>{quantidade}</div>
-        <button onClick={() => this.moreProductsInCar()}>+</button>
-        <button>Adicionar ao carrinho</button>
-        <h3>Avaliações</h3>
+        <div className="addItensCar">
+          <h3>Quantidade:</h3>
+          <button className="MoreOrLess" onClick={() => this.lessProductsIncar()}>-</button>
+          <div>{quantidade}</div>
+          <button className="MoreOrLess" onClick={() => this.moreProductsInCar()}>+</button>
+          <button className="addToCar" onClick={() => addItemCar(quantidade)}>
+            Adicionar ao carrinho
+          </button>
+        </div>
         <form>
-        <input type="text" placeholder="Email"></input>
-        <input type="text-area" placeholder="Mensagem(opcional)"></input>
-        <button>Avaliar</button>
+          <h3>Avaliações</h3>
+          <div className="inLineForm">
+            <input type="text" placeholder="Email"></input>
+            <select>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <textarea placeholder="Mensagem(opcional)"></textarea>
+          <button>Avaliar</button>
         </form>
       </div>
     );
