@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from '../cardComponents/input';
+import Input from '../cardComponents/Input';
 import Button from '../cardComponents/Button';
 import Image from '../cardComponents/Image';
 import CartButton from '../cartButton/CartButton';

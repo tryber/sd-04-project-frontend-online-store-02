@@ -2,6 +2,7 @@ import React from 'react';
 import ProductCard from './ProductCard';
 import NotFound from './NotFound';
 import LandingPage from './LandingPage';
+import './ProductList.css';
 
 class ProductList extends React.Component {
   render() {
