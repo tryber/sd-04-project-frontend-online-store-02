@@ -1,40 +1,42 @@
 import React, { Component } from 'react';
+import Button from '../cardComponents/button';
+import Input from '../cardComponents/input';
 import './style.css';
 
 class Forms extends Component {
   constructor(props) {
     super(props);
-    this.state = { quantidade: 1, nota: 0 };
+    this.state = { amount: 1 };
   }
 
   moreProductsInCar() {
-    this.setState((state) => ({ quantidade: state.quantidade + 1 }));
+    this.setState((state) => ({ amount: state.amount + 1 }));
   }
 
   lessProductsIncar() {
-    if (this.state.quantidade > 1) {
-      this.setState((state) => ({ quantidade: state.quantidade - 1 }));
+    if (this.state.amount > 1) {
+      this.setState((state) => ({ amount: state.amount - 1 }));
     }
   }
 
   render() {
-    const { quantidade } = this.state;
+    const { amount } = this.state;
     const { addItemCar } = this.props;
     return (
       <div>
         <div className="addItensCar">
           <h3>Quantidade:</h3>
-          <button className="MoreOrLess" onClick={() => this.lessProductsIncar()}>-</button>
-          <div>{quantidade}</div>
-          <button className="MoreOrLess" onClick={() => this.moreProductsInCar()}>+</button>
-          <button className="addToCar" onClick={() => addItemCar(quantidade)}>
+          <Button className="MoreOrLess" onClick={() => this.lessProductsIncar()}>-</Button>
+          <div>{amount}</div>
+          <Button className="MoreOrLess" onClick={() => this.moreProductsInCar()}>+</Button>
+          <Button className="addToCar" onClick={() => addItemCar(amount)}>
             Adicionar ao carrinho
-          </button>
+          </Button>
         </div>
         <form>
           <h3>Avaliações</h3>
           <div className="inLineForm">
-            <input type="text" placeholder="Email" />
+            <Input type="text" placeholder="Email" />
             <select>
               <option>1</option>
               <option>2</option>
@@ -44,7 +46,7 @@ class Forms extends Component {
             </select>
           </div>
           <textarea placeholder="Mensagem(opcional)" />
-          <button>Avaliar</button>
+          <Button>Avaliar</Button>
         </form>
       </div>
     );

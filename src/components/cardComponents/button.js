@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 class Button extends Component {
   render() {
-    const { text, test } = this.props;
+    const { children, test, onClick, className } = this.props;
     return (
-      <button data-testid={test} type="button">
-        {text}
+      <button className={className} onClick={onClick} data-testid={test} type="button">
+        {children}
       </button>
     );
   }
