@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import MainContent from './components/MainContent/MainContent';
+import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import * as api from './services/api';
 
 class App extends Component {
@@ -23,9 +24,10 @@ class App extends Component {
     const { query, data } = this.state;
     return (
       <div className="App">
-        <Header />
         <BrowserRouter>
+          <Header />
           <Switch>
+            <Route exact path="/cart" component={ShoppingCart} />
             <Route
               exact
               path="/details/:id/:id2"
