@@ -34,7 +34,7 @@ class Forms extends Component {
         <form>
           <h3>Avaliações</h3>
           <div className="inLineForm">
-            <input type="text" placeholder="Email"></input>
+            <input type="text" placeholder="Email" />
             <select>
               <option>1</option>
               <option>2</option>
@@ -43,7 +43,7 @@ class Forms extends Component {
               <option>5</option>
             </select>
           </div>
-          <textarea placeholder="Mensagem(opcional)"></textarea>
+          <textarea placeholder="Mensagem(opcional)" />
           <button>Avaliar</button>
         </form>
       </div>
