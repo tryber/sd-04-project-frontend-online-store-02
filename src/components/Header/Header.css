@@ -19,7 +19,7 @@ header {
   align-items: center;
   background-color: rgb(107, 106, 106);
   display: flex;
-  font-family: 'Oswald' , sans-serif;
+  font-family: sans-serif;
   height: 10vh;
   justify-content: space-around;
 }
