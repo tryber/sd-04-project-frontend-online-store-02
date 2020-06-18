@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
-import ProductList from './components/ProductList';
-import Aside from './components/Aside';
-import Header from './components/header/Header';
+import Header from './components/Header/Header';
 import ProductDetails from './components/ProductDetails/ProductDetails';
+import MainContent from './components/MainContent/MainContent';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = { query: false };
   }
-  // click() {}
+  // handleClick() {}
 
   render() {
     const { query } = this.state;
@@ -27,11 +26,10 @@ class App extends Component {
             />
             <Route exact path="/">
               {/* ProductList tem que receber os dados via props "productsData" */}
-              <ProductList query={query} />
+              <MainContent query={query} />
             </Route>
           </Switch>
         </BrowserRouter>
-        <Aside click={this.click} />
       </div>
     );
   }

@@ -1,0 +1,25 @@
+.row {
+  align-items: center;
+  display: flex;
+}
+
+.row img {
+  margin-left: 2vw;
+}
+
+input {
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 8px 0;
+  padding: 12px 20px;
+}
+
+header {
+  align-items: center;
+  background-color: rgb(107, 106, 106);
+  display: flex;
+  font-family: sans-serif;
+  height: 10vh;
+  justify-content: space-around;
+}

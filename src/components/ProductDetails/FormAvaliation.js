@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Button from '../cardComponents/button';
-import Input from '../cardComponents/input';
-import './style.css';
+import Button from '../cardComponents/Button';
+import Input from '../cardComponents/Input';
+import './FormAvaliation.css';
+import Select from '../cardComponents/Select';
 
 class Forms extends Component {
   constructor(props) {
@@ -26,24 +27,20 @@ class Forms extends Component {
       <div>
         <div className="addItensCar">
           <h3>Quantidade:</h3>
-          <Button className="MoreOrLess" onClick={() => this.lessProductsIncar()}>-</Button>
+          <Button cName="MoreOrLess" onClick={() => this.lessProductsIncar()}>-</Button>
           <div>{amount}</div>
-          <Button className="MoreOrLess" onClick={() => this.moreProductsInCar()}>+</Button>
-          <Button className="addToCar" onClick={() => addItemCar(amount)}>
-            Adicionar ao carrinho
-          </Button>
+          <Button cName="MoreOrLess" onClick={() => this.moreProductsInCar()}>+</Button>
+          <div data-testid="product-add-to-cart">
+            <Button test="product-add-to-cart" cName="addToCar" onClick={() => addItemCar(amount)}>
+              Adicionar ao carrinho
+            </Button>
+          </div>
         </div>
         <form>
           <h3>Avaliações</h3>
           <div className="inLineForm">
             <Input type="text" placeholder="Email" />
-            <select>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
+            <Select />
           </div>
           <textarea placeholder="Mensagem(opcional)" />
           <Button>Avaliar</Button>
