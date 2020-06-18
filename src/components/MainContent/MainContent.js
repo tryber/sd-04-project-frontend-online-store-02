@@ -8,7 +8,7 @@ class MainContent extends React.Component {
     const { handleClick, query, productsData } = this.props;
     return (
       <div className="row">
-        <Aside click={handleClick} />
+        <Aside handleClick={handleClick} />
         <ProductList productsData={productsData} query={query} />
       </div>
     );

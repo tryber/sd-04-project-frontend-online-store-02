@@ -4,16 +4,23 @@ import './App.css';
 import Header from './components/Header/Header';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import MainContent from './components/MainContent/MainContent';
+import * as api from './services/api';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { query: false };
+    this.state = { query: false, data: [] };
+    this.handleClick = this.handleClick.bind(this);
   }
-  // handleClick() {}
+
+  handleClick(categoryId) {
+    api
+      .getProductsFromCategoryAndQuery(categoryId)
+      .then((data) => this.setState({ data, query: true }));
+  }
 
   render() {
-    const { query } = this.state;
+    const { query, data } = this.state;
     return (
       <div className="App">
         <Header />
@@ -21,12 +28,16 @@ class App extends Component {
           <Switch>
             <Route
               exact
-              path="/details/:id"
+              path="/details/:id/:id2"
               render={(props) => <ProductDetails {...props} />}
             />
             <Route exact path="/">
               {/* ProductList tem que receber os dados via props "productsData" */}
-              <MainContent query={query} />
+              <MainContent
+                handleClick={this.handleClick}
+                productsData={data.results}
+                query={query}
+              />
             </Route>
           </Switch>
         </BrowserRouter>
