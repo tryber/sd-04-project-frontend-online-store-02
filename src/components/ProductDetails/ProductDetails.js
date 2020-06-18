@@ -1,7 +1,7 @@
 import React from 'react';
 import * as api from '../../services/api';
 import Image from '../cardComponents/Image';
-import FormAvaliation from './FormAvaliation'
+import FormAvaliation from './FormAvaliation';
 
 class ProductDetails extends React.Component {
   constructor(props) {
