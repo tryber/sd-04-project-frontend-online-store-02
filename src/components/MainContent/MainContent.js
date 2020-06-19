@@ -9,7 +9,12 @@ class MainContent extends React.Component {
     return (
       <div className="row">
         <Aside handleClick={handleClick} />
-        <ProductList productsData={productsData} query={query} addProductCart={addProductCart} />
+        <ProductList
+          productsData={productsData}
+          query={query}
+          addProductCart={addProductCart}
+        />
+
       </div>
     );
   }

@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import EmptyList from './EmptyList';
 import FullList from './FullList';
+import Button from '../cardComponents/Button';
 
 class ShoppingCart extends React.Component {
   render() {
@@ -9,6 +11,11 @@ class ShoppingCart extends React.Component {
     return (
       <div>
         <FullList productsCart={productsCart} />
+        <Link to="/checkout">
+          <Button test="checkout-products" type="button">
+            Comprar
+          </Button>
+        </Link>
       </div>
     );
   }
