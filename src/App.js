@@ -10,22 +10,31 @@ import * as api from './services/api';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { query: false, data: [] };
+    this.state = { query: false, data: [], input: '' };
     this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleClick(categoryId) {
+  handleClick(categoryId = '$CATEGORY_ID', query = '$QUERY') {
     api
-      .getProductsFromCategoryAndQuery(categoryId)
+      .getProductsFromCategoryAndQuery(categoryId, query)
       .then((data) => this.setState({ data, query: true }));
   }
 
+  handleChange(e) {
+    this.setState({ input: e.target.value });
+  }
+
   render() {
-    const { query, data } = this.state;
+    const { query, data, input } = this.state;
     return (
       <div className="App">
         <BrowserRouter>
-          <Header />
+          <Header
+            inputValue={input}
+            handleChange={this.handleChange}
+            handleClick={this.handleClick}
+          />
           <Switch>
             <Route exact path="/cart" component={ShoppingCart} />
             <Route

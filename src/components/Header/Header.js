@@ -8,7 +8,7 @@ import './Header.css';
 
 export default class Header extends React.Component {
   render() {
-    const { inputValue } = this.props;
+    const { handleChange, handleClick, inputValue } = this.props;
     return (
       <header>
         <div className="row">
@@ -21,11 +21,16 @@ export default class Header extends React.Component {
         <div className="row">
           <Input
             type="text"
-            value={inputValue}
+            onChange={handleChange}
             test="query-input"
             placeholder="Digite aqui sua pesquisa"
           />
-          <Button test="query-button">Pesquisar</Button>
+          <Button
+            onClick={() => handleClick(undefined, inputValue)}
+            test="query-button"
+          >
+            Pesquisar
+          </Button>
           <Link to="/cart">
             <CartButton />
           </Link>
