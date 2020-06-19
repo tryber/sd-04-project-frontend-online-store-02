@@ -6,6 +6,7 @@ import ProductDetails from './components/ProductDetails/ProductDetails';
 import MainContent from './components/MainContent/MainContent';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import * as api from './services/api';
+import Checkout from './components/Checkout/Checkout';
 
 class App extends Component {
   constructor(props) {
@@ -57,11 +58,7 @@ class App extends Component {
             <Route exact path="/cart">
               <ShoppingCart productsCart={productsCart} />
             </Route>
-            <Route
-              exact
-              path="/details/:id/:id2"
-              render={(props) => <ProductDetails {...props} />}
-            />
+            <Route path="/details/:id/:id2" render={(props) => <ProductDetails {...props} />} />
             <Route exact path="/">
               {/* ProductList tem que receber os dados via props "productsData" */}
               <MainContent
@@ -70,6 +67,9 @@ class App extends Component {
                 addProductCart={this.addProductCart}
                 query={query}
               />
+            </Route>
+            <Route exact path="/checkout">
+              <Checkout />
             </Route>
           </Switch>
         </BrowserRouter>
