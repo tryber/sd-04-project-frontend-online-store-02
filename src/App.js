@@ -16,6 +16,14 @@ class App extends Component {
     this.addProductCart = this.addProductCart.bind(this);
   }
 
+  componentDidMount() {
+    this.teste();
+  }
+
+  teste() {
+    this.setState({ productsCart: JSON.parse(localStorage.getItem('product')) });
+  }
+
   handleClick(categoryId = '$CATEGORY_ID', query = '$QUERY') {
     api
       .getProductsFromCategoryAndQuery(categoryId, query)
@@ -32,11 +40,7 @@ class App extends Component {
       local.push(object);
       localStorage.setItem('product', JSON.stringify(local));
     } else localStorage.setItem('product', JSON.stringify([object]));
-    return this.setState({productsCart: JSON.parse(localStorage.getItem('product'))});
-  }
-
-  componentDidMount() {
-    this.setState({productsCart: JSON.parse(localStorage.getItem('product'))});
+    return this.setState({ productsCart: JSON.parse(localStorage.getItem('product')) });
   }
 
   render() {
