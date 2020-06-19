@@ -2,8 +2,8 @@ import React from 'react';
 
 class Title extends React.Component {
   render() {
-    const { name } = this.props;
-    return <h3>{name}</h3>;
+    const { name, test } = this.props;
+    return <h3 data-testid={test}>{name}</h3>;
   }
 }
 
