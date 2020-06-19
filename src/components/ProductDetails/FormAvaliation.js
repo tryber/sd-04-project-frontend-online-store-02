@@ -31,24 +31,24 @@ class Forms extends Component {
           <Button cName="MoreOrLess" onClick={() => this.lessProductsIncar()}>-</Button>
           <div>{amount}</div>
           <Button cName="MoreOrLess" onClick={() => this.moreProductsInCar()}>+</Button>
-            <Button
-              test="product-detail-add-to-cart"
-              cName="addToCar"
-              onClick={() => addProductCart(object)}
-            >
-              Adicionar ao carrinho
-            </Button>
-          </div>
+          <Button
+            test="product-detail-add-to-cart"
+            cName="addToCar"
+            onClick={() => addProductCart(object)}
+          >
+            Adicionar ao carrinho
+          </Button>
+        </div>
         <form>
           <h3>Avaliações</h3>
           <div className="inLineForm">
             <Input type="text" placeholder="Email" />
-            <Select />
           </div>
+          <Select />
           <textarea placeholder="Mensagem(opcional)" />
           <Button>Avaliar</Button>
         </form>
-        </div>
+      </div>
     );
   }
 }
