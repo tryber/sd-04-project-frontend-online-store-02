@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header/Header';
+import To from './components/Header/Header';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import MainContent from './components/MainContent/MainContent';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
@@ -49,18 +49,13 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-          <Header
-            inputValue={input}
-            handleChange={this.handleChange}
-            handleClick={this.handleClick}
-          />
+          <To inputValue={input} handleChange={this.handleChange} handleClick={this.handleClick} />
           <Switch>
             <Route exact path="/cart">
               <ShoppingCart productsCart={productsCart} />
             </Route>
-            <Route path="/details/:id/:id2" render={(props) => <ProductDetails {...props} />} />
+            <Route path="/details/:id/:id2" render={(props) => <ProductDetails {...props} addProductCart={this.addProductCart} />} />
             <Route exact path="/">
-              {/* ProductList tem que receber os dados via props "productsData" */}
               <MainContent
                 handleClick={this.handleClick}
                 productsData={data.results}
@@ -68,9 +63,7 @@ class App extends Component {
                 query={query}
               />
             </Route>
-            <Route exact path="/checkout">
-              <Checkout />
-            </Route>
+            <Route exact path="/checkout"><Checkout /></Route>
           </Switch>
         </BrowserRouter>
       </div>
