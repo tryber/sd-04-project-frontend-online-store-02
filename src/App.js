@@ -10,9 +10,10 @@ import * as api from './services/api';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { query: false, data: [], input: '' };
+    this.state = { query: false, data: [], input: '', productsCart: [] };
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.addProductCart = this.addProductCart.bind(this);
   }
 
   handleClick(categoryId = '$CATEGORY_ID', query = '$QUERY') {
@@ -25,8 +26,18 @@ class App extends Component {
     this.setState({ input: e.target.value });
   }
 
+  addProductCart(object) {
+    if (localStorage.getItem('product')) {
+      let local = Array.from(JSON.parse(localStorage.getItem('product')));
+      local.push(object);
+      localStorage.setItem('product', JSON.stringify(local));
+    } else localStorage.setItem('product', JSON.stringify([object]));
+
+    return this.setState({ productsCart: JSON.parse(localStorage.getItem('product')) });
+  }
+
   render() {
-    const { query, data, input } = this.state;
+    const { query, data, input, productsCart } = this.state;
     return (
       <div className="App">
         <BrowserRouter>
@@ -36,7 +47,9 @@ class App extends Component {
             handleClick={this.handleClick}
           />
           <Switch>
-            <Route exact path="/cart" component={ShoppingCart} />
+            <Route exact path="/cart">
+              <ShoppingCart productsCart={productsCart} />
+            </Route>
             <Route
               exact
               path="/details/:id/:id2"
@@ -47,6 +60,7 @@ class App extends Component {
               <MainContent
                 handleClick={this.handleClick}
                 productsData={data.results}
+                addProductCart={this.addProductCart}
                 query={query}
               />
             </Route>
