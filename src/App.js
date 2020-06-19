@@ -28,7 +28,7 @@ class App extends Component {
 
   addProductCart(object) {
     if (localStorage.getItem('product')) {
-      let local = Array.from(JSON.parse(localStorage.getItem('product')));
+      const local = Array.from(JSON.parse(localStorage.getItem('product')));
       local.push(object);
       localStorage.setItem('product', JSON.stringify(local));
     } else localStorage.setItem('product', JSON.stringify([object]));

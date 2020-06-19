@@ -17,10 +17,10 @@ class FullList extends React.Component {
         <CartHeader />
         <div>
           {productsCart.map((product) => (
-            <>
+            <div>
               <div data-testid="shopping-cart-product-name">{product.title}</div>
               <div data-testid="shopping-cart-product-quantity">1</div>
-            </>
+            </div>
           ))}
         </div>
       </div>
