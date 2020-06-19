@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Aside from './Aside/Aside';
 import ProductList from './Product List-Card/ProductList';
 import './mainContent.css';
-import Button from '../cardComponents/Button';
 
 class MainContent extends React.Component {
   render() {

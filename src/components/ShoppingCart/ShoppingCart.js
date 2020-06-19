@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import EmptyList from './EmptyList';
 import FullList from './FullList';
-import { Link } from 'react-router-dom';
 import Button from '../cardComponents/Button';
 
 class ShoppingCart extends React.Component {
@@ -12,7 +12,9 @@ class ShoppingCart extends React.Component {
       <div>
         <FullList productsCart={productsCart} />
         <Link to="/checkout">
-          <Button test="checkout-products" type="button" children="Comprar" />
+          <Button test="checkout-products" type="button">
+            Comprar
+          </Button>
         </Link>
       </div>
     );
