@@ -8,13 +8,22 @@ import Button from '../../cardComponents/Button';
 class ProductCard extends React.Component {
   render() {
     const { productData, addProductCart } = this.props;
-    const object = { title: productData.title };
+    const object = {
+      [productData.id]: 1,
+      id: productData.id,
+      thumbnail: productData.thumbnail,
+      title: productData.title,
+      price: productData.price,
+    };
     return (
       <div data-testid="product">
         <Image src={productData.thumbnail} alt={productData.title} />
         <Title name={productData.title} />
         <Price value={productData.price} />
-        <Button onClick={() => addProductCart(object)} test={'product-add-to-cart'}>
+        <Button
+          onClick={() => addProductCart(object)}
+          test={'product-add-to-cart'}
+        >
           Adicionar ao carrinho
         </Button>
         <Link
