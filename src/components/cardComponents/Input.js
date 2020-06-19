@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Input extends Component {
   render() {
-    const { type, value, test, placeholder, onChange } = this.props;
+    const { type, value, test, placeholder, onChange, name } = this.props;
     return (
       <input
         onChange={onChange}
@@ -10,6 +10,7 @@ class Input extends Component {
         data-testid={test}
         value={value}
         placeholder={placeholder}
+        name={name}
       />
     );
   }
