@@ -23,18 +23,6 @@ class AddRemovePanel extends React.Component {
         >
           +
         </Button>
-        {/* <Image
-          onClick={onClick}
-          test="product-decrease-quantity"
-          src="https://cdn1.iconfinder.com/data/icons/material-core/20/remove-circle-outline-128.png"
-          alt="remove"
-        /> */}
-        {/* <Image
-          onClick={onClick}
-          test="product-increase-quantity"
-          src="https://cdn1.iconfinder.com/data/icons/material-core/20/add-circle-outline-128.png"
-          alt="add"
-        /> */}
       </div>
     );
   }
