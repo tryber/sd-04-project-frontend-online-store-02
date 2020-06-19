@@ -5,9 +5,7 @@ import CartHeader from './CartHeader';
 class FullList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      productCart: [],
-    };
+    this.state = { productCart: [] };
   }
 
   render() {
