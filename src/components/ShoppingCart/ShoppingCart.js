@@ -4,11 +4,11 @@ import FullList from './FullList';
 
 class ShoppingCart extends React.Component {
   render() {
-    const { cart } = this.props;
-    if (!cart || cart.length === 0) return <EmptyList />;
+    const { productsCart } = this.props;
+    if (productsCart.length === 0) return <EmptyList />;
     return (
       <div>
-        <FullList />
+        <FullList productsCart={productsCart} />
       </div>
     );
   }

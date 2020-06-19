@@ -5,11 +5,11 @@ import './mainContent.css';
 
 class MainContent extends React.Component {
   render() {
-    const { handleClick, query, productsData } = this.props;
+    const { handleClick, query, productsData, addProductCart } = this.props;
     return (
       <div className="row">
         <Aside handleClick={handleClick} />
-        <ProductList productsData={productsData} query={query} />
+        <ProductList productsData={productsData} query={query} addProductCart={addProductCart} />
       </div>
     );
   }
