@@ -60,7 +60,7 @@ class App extends Component {
             <Route
               exact
               path="/details/:id/:id2"
-              render={(props) => <ProductDetails {...props} />}
+              render={(props) => <ProductDetails {...props} addProductCart={this.addProductCart} />}
             />
             <Route exact path="/">
               {/* ProductList tem que receber os dados via props "productsData" */}
