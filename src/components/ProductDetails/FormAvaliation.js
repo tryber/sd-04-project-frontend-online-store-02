@@ -23,7 +23,14 @@ class Forms extends Component {
   render() {
     const { amount } = this.state;
     const { addProductCart, data } = this.props;
-    const object = { title: data };
+    const object = {
+      [data.id]: 1,
+      id: data.id,
+      thumbnail: data.thumbnail,
+      title: data.title,
+      price: data.price,
+    }
+    
     return (
       <div>
         <div className="addItensCar">
@@ -45,7 +52,7 @@ class Forms extends Component {
             <Input type="text" placeholder="Email" />
           </div>
           <Select />
-          <textarea placeholder="Mensagem(opcional)" />
+          <textarea data-testid="product-detail-evaluation" placeholder="Mensagem(opcional)" />
           <Button>Avaliar</Button>
         </form>
       </div>

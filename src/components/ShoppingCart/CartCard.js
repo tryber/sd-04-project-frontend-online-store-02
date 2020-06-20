@@ -9,7 +9,6 @@ class CartCard extends React.Component {
   render() {
     const {
       productData,
-      checkout,
       quantity,
       onClickRemove,
       onClickAdd,
@@ -26,9 +25,6 @@ class CartCard extends React.Component {
           onClickAdd={onClickAdd}
           quantity={quantity}
         />
-        <Button onClick={checkout} test="checkout-products">
-          Finalizar compra
-        </Button>
       </div>
     );
   }

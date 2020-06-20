@@ -13,7 +13,7 @@ class ShoppingCart extends React.Component {
         <FullList productsCart={productsCart} />
         <Link to="/checkout">
           <Button test="checkout-products" type="button">
-            Comprar
+            Finalizar compra
           </Button>
         </Link>
       </div>

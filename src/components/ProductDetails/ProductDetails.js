@@ -25,7 +25,7 @@ class ProductDetails extends React.Component {
         <h2 data-testid="product-detail-name">{data.title}</h2>
         <p>{data.price}</p>
         <Image src={data.thumbnail} alt={data.title} />
-        <FormAvaliation data={data.title} addProductCart={addProductCart} />
+        <FormAvaliation data={data} addProductCart={addProductCart} />
       </React.Fragment>
     );
   }
