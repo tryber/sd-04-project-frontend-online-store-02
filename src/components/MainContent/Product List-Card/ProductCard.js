@@ -4,6 +4,7 @@ import Image from '../../cardComponents/Image';
 import Title from '../../cardComponents/Title';
 import Price from '../../cardComponents/Price';
 import Button from '../../cardComponents/Button';
+import FreeShipping from './FreeShipping';
 
 class ProductCard extends React.Component {
   render() {
@@ -15,15 +16,14 @@ class ProductCard extends React.Component {
       title: productData.title,
       price: productData.price,
     };
+
     return (
       <div data-testid="product">
         <Image src={productData.thumbnail} alt={productData.title} />
         <Title name={productData.title} />
         <Price value={productData.price} />
-        <Button
-          onClick={() => addProductCart(object)}
-          test="product-add-to-cart"
-        >
+        <FreeShipping verify={productData.shipping.free_shipping} />
+        <Button onClick={() => addProductCart(object)} test="product-add-to-cart">
           Adicionar ao carrinho
         </Button>
         <Link
