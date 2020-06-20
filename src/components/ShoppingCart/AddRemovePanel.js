@@ -5,7 +5,6 @@ import DisplayQuantity from './DisplayQuantity';
 class AddRemovePanel extends React.Component {
   render() {
     const { quantity, onClickRemove, onClickAdd, name } = this.props;
-    if (quantity) console.log(quantity);
     return (
       <div>
         <DisplayQuantity quantity={quantity} name={name} />

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
-import To from './components/Header/Header';
+import H from './components/Header/Header';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import MainContent from './components/MainContent/MainContent';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
@@ -48,7 +48,7 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-          <To inputValue={input} handleChange={this.handleChange} handleClick={this.handleClick} />
+          <H inputValue={input} handleChange={this.handleChange} handleClick={this.handleClick} />
           <Switch>
             <Route exact path="/cart">
               <ShoppingCart productsCart={productsCart} />
