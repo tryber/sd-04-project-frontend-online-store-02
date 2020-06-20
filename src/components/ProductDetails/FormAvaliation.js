@@ -23,30 +23,18 @@ class Forms extends Component {
 
   render() {
     const { amount } = this.state;
-    const { addProductCart, data } = this.props;
-    const object = {
-      [data.id]: 1,
-      id: data.id,
-      thumbnail: data.thumbnail,
-      title: data.title,
-      price: data.price,
-    };
-
+    const { addProductCart, obj } = this.props;
     return (
       <div>
         <div className="addItensCar">
           <h3>Quantidade:</h3>
-          <Button cName="MoreOrLess" onClick={() => this.lessProductsIncar()}>
-            -
-          </Button>
+          <Button cName="MoreOrLess" onClick={() => this.lessProductsIncar()}>-</Button>
           <div>{amount}</div>
-          <Button cName="MoreOrLess" onClick={() => this.moreProductsInCar()}>
-            +
-          </Button>
+          <Button cName="MoreOrLess" onClick={() => this.moreProductsInCar()}>+</Button>
           <Button
             test="product-detail-add-to-cart"
             cName="addToCar"
-            onClick={() => addProductCart(object)}
+            onClick={() => addProductCart(obj)}
           >
             Adicionar ao carrinho
           </Button>
@@ -57,10 +45,7 @@ class Forms extends Component {
             <Input type="text" placeholder="Email" />
           </div>
           <Select />
-          <textarea
-            data-testid="product-detail-evaluation"
-            placeholder="Mensagem(opcional)"
-          />
+          <textarea data-testid="product-detail-evaluation" placeholder="Mensagem(opcional)" />
           <Button>Avaliar</Button>
         </form>
       </div>
