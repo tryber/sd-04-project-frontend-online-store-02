@@ -15,7 +15,8 @@ class Forms extends Component {
   }
 
   lessProductsIncar() {
-    if (this.state.amount > 1) {
+    const { amount } = this.state;
+    if (amount > 1) {
       this.setState((state) => ({ amount: state.amount - 1 }));
     }
   }
@@ -29,15 +30,19 @@ class Forms extends Component {
       thumbnail: data.thumbnail,
       title: data.title,
       price: data.price,
-    }
-    
+    };
+
     return (
       <div>
         <div className="addItensCar">
           <h3>Quantidade:</h3>
-          <Button cName="MoreOrLess" onClick={() => this.lessProductsIncar()}>-</Button>
+          <Button cName="MoreOrLess" onClick={() => this.lessProductsIncar()}>
+            -
+          </Button>
           <div>{amount}</div>
-          <Button cName="MoreOrLess" onClick={() => this.moreProductsInCar()}>+</Button>
+          <Button cName="MoreOrLess" onClick={() => this.moreProductsInCar()}>
+            +
+          </Button>
           <Button
             test="product-detail-add-to-cart"
             cName="addToCar"
@@ -52,7 +57,10 @@ class Forms extends Component {
             <Input type="text" placeholder="Email" />
           </div>
           <Select />
-          <textarea data-testid="product-detail-evaluation" placeholder="Mensagem(opcional)" />
+          <textarea
+            data-testid="product-detail-evaluation"
+            placeholder="Mensagem(opcional)"
+          />
           <Button>Avaliar</Button>
         </form>
       </div>

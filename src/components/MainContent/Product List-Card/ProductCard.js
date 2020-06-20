@@ -22,7 +22,7 @@ class ProductCard extends React.Component {
         <Price value={productData.price} />
         <Button
           onClick={() => addProductCart(object)}
-          test={'product-add-to-cart'}
+          test="product-add-to-cart"
         >
           Adicionar ao carrinho
         </Button>

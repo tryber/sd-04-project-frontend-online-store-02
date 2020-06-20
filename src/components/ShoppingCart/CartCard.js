@@ -2,7 +2,6 @@ import React from 'react';
 import Image from '../cardComponents/Image';
 import Title from '../cardComponents/Title';
 import Price from '../cardComponents/Price';
-import Button from '../cardComponents/Button';
 import AddRemovePanel from './AddRemovePanel';
 
 class CartCard extends React.Component {
