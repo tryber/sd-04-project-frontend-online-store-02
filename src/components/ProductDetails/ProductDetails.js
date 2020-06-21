@@ -7,19 +7,18 @@ import FreeShipping from '../MainContent/Product List-Card/FreeShipping';
 class ProductDetails extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { data: [], bollean: false };
+    this.state = { data: [], verify: false };
   }
 
   componentDidMount() {
     const { match } = this.props;
     api.getProductsFromCategoryAndQuery(match.params.id, match.params.id2).then((data) => {
-      this.setState({ data: data.results[0], bollean: data.results[0].shipping.free_shipping });
+      this.setState({ data: data.results[0], verify: data.results[0].shipping.free_shipping });
     });
   }
 
   render() {
-    const { data, bollean } = this.state;
-    console.log(bollean);
+    const { data, verify: bollean } = this.state;
     const { addProductCart } = this.props;
     const object = {
       [data.id]: 1,
