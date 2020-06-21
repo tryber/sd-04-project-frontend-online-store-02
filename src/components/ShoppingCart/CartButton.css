@@ -3,19 +3,22 @@ img {
 }
 
 .enphasys {
-  animation-name: paragraph;
   animation-duration: 1s;
-  box-shadow: 0px 0px 4px 0px;
+  animation-name: paragraph;
+  box-shadow: 1px 1px 5px 1px;
 }
 
 @keyframes paragraph {
+
   0% {
     color: black;
   }
+
   50% {
     color: red;
     font-size: 130%;
   }
+  
   100% {
     color: black;
   }

@@ -19,7 +19,7 @@ class App extends Component {
 
   componentDidMount() {
     this.getCartItems();
-    this.setState({ items: localStorage });
+    this.cartState();
   }
 
   getCartItems() {
@@ -27,6 +27,10 @@ class App extends Component {
     const keys = Object.keys(localStorage);
     keys.forEach((key) => arr.push(JSON.parse(localStorage.getItem(key))));
     this.setState({ productsCart: arr });
+  }
+
+  cartState() {
+    this.setState({ items: localStorage });
   }
 
   handleClick(categoryId = '$CATEGORY_ID', query = '$QUERY') {
@@ -53,9 +57,8 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-          <H inputValue={input} handleChange={this.handleChange} handleClick={this.handleClick}
-            items={items}
-            classN={classN}
+          <H inputValue={input} handleChange={this.handleChange}
+          handleClick={this.handleClick} items={items} classN={classN}
           />
           <Switch>
             <Route exact path="/cart">
