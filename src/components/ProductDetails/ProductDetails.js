@@ -8,18 +8,22 @@ import './ProductDetails.css';
 class ProductDetails extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { data: [], verify: false };
+    this.state = { data: [], verify: false, price: '' };
   }
 
   componentDidMount() {
     const { match } = this.props;
     api.getProductsFromCategoryAndQuery(match.params.id, match.params.id2).then((data) => {
-      this.setState({ data: data.results[0], verify: data.results[0].shipping.free_shipping });
+      this.setState({
+        data: data.results[0],
+        verify: data.results[0].shipping.free_shipping,
+        price: Number(data.results[0].price).toFixed(2),
+      });
     });
   }
 
   render() {
-    const { data, verify: bollean } = this.state;
+    const { data, verify: bollean, price } = this.state;
     const { addProductCart } = this.props;
     const object = {
       [data.id]: 1,
@@ -32,7 +36,7 @@ class ProductDetails extends React.Component {
       <React.Fragment>
         <div className="product-detail">
           <h2 data-testid="product-detail-name">{data.title}</h2>
-          <p>R$ {Number(data.price).toFixed(2)}</p>
+          <p>{price}</p>
           <Image className="imagem-produto" src={data.thumbnail} alt={data.title} />
           <FreeShipping verify={bollean} />
           <FormAvaliation obj={object} data={data} addProductCart={addProductCart} />
