@@ -1,5 +1,20 @@
 .categories {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  width: 30%;
+}
+.categories button {
+  background-color: #ededed;
+  background: linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+  border: 1px solid #d6bcd6;
+  border-radius: 15px;
+  box-shadow: 3px 4px 0 0 #899599;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  margin: 5px 0;
+  outline: none;
+  padding: 7px 25px;
+  text-decoration: none;
+  text-shadow: 0 1px #e1e2ed;
 }

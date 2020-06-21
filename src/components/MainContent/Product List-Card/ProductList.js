@@ -10,7 +10,7 @@ class ProductList extends React.Component {
     if (!query) return <LandingPage />;
     if (!productsData || productsData.length === 0) return <NotFound />;
     return (
-      <div>
+      <div className="productList">
         {productsData.map((eachProductData) => (
           <ProductCard
             key={eachProductData.id}
