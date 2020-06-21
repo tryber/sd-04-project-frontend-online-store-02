@@ -8,13 +8,16 @@ class MainContent extends React.Component {
     const { handleClick, query, productsData, addProductCart } = this.props;
     return (
       <div className="row">
-        <Aside handleClick={handleClick} />
-        <ProductList
-          productsData={productsData}
-          query={query}
-          addProductCart={addProductCart}
-        />
-
+        <div className="asideDiv">
+          <Aside handleClick={handleClick} />
+        </div>
+        <div className="listDiv">
+          <ProductList
+            productsData={productsData}
+            query={query}
+            addProductCart={addProductCart}
+          />
+        </div>
       </div>
     );
   }

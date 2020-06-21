@@ -5,6 +5,7 @@ import Title from '../../cardComponents/Title';
 import Price from '../../cardComponents/Price';
 import Button from '../../cardComponents/Button';
 import FreeShipping from './FreeShipping';
+import './ProductCard.css';
 
 class ProductCard extends React.Component {
   render() {
@@ -18,7 +19,7 @@ class ProductCard extends React.Component {
     };
 
     return (
-      <div data-testid="product">
+      <div data-testid="product" className="productCard">
         <Image src={productData.thumbnail} alt={productData.title} />
         <Title name={productData.title} />
         <Price value={productData.price} />
