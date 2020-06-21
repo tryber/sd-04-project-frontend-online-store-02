@@ -8,7 +8,7 @@ import './Header.css';
 
 export default class Header extends React.Component {
   render() {
-    const { handleChange, handleClick, inputValue } = this.props;
+    const { handleChange, handleClick, inputValue, items, classN } = this.props;
     return (
       <header>
         <div className="row">
@@ -32,7 +32,7 @@ export default class Header extends React.Component {
             Pesquisar
           </Button>
           <Link to="/cart">
-            <CartButton />
+            <CartButton items={items} classN={classN} />
           </Link>
         </div>
       </header>

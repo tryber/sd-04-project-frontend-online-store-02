@@ -11,7 +11,7 @@ import Checkout from './components/Checkout/Checkout';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { query: false, data: [], input: '', productsCart: [] };
+    this.state = { query: false, data: [], input: '', productsCart: [], items: '', classN: '' };
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.addProductCart = this.addProductCart.bind(this);
@@ -19,6 +19,7 @@ class App extends Component {
 
   componentDidMount() {
     this.getCartItems();
+    this.setState({ items: localStorage });
   }
 
   getCartItems() {
@@ -41,14 +42,21 @@ class App extends Component {
   addProductCart(object) {
     localStorage.setItem(object.id, JSON.stringify(object));
     this.getCartItems();
+    this.setState({ classN: 'enphasys' });
+    setTimeout(() => {
+      this.setState({ classN: '' });
+    }, 1000);
   }
 
   render() {
-    const { query, data, input, productsCart } = this.state;
+    const { query, data, input, productsCart, items, classN } = this.state;
     return (
       <div className="App">
         <BrowserRouter>
-          <H inputValue={input} handleChange={this.handleChange} handleClick={this.handleClick} />
+          <H inputValue={input} handleChange={this.handleChange} handleClick={this.handleClick}
+            items={items}
+            classN={classN}
+          />
           <Switch>
             <Route exact path="/cart">
               <ShoppingCart productsCart={productsCart} />
