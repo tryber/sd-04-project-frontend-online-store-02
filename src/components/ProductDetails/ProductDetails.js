@@ -3,6 +3,7 @@ import * as api from '../../services/api';
 import Image from '../cardComponents/Image';
 import FormAvaliation from './FormAvaliation';
 import FreeShipping from '../MainContent/Product List-Card/FreeShipping';
+import './ProductDetails.css';
 
 class ProductDetails extends React.Component {
   constructor(props) {
@@ -29,11 +30,13 @@ class ProductDetails extends React.Component {
     };
     return (
       <React.Fragment>
-        <h2 data-testid="product-detail-name">{data.title}</h2>
-        <p>{data.price}</p>
-        <Image src={data.thumbnail} alt={data.title} />
-        <FreeShipping verify={bollean} />
-        <FormAvaliation obj={object} data={data} addProductCart={addProductCart} />
+        <div className="product-detail">
+          <h2 data-testid="product-detail-name">{data.title}</h2>
+          <p>R$ {Number(data.price).toFixed(2)}</p>
+          <Image className="imagem-produto" src={data.thumbnail} alt={data.title} />
+          <FreeShipping verify={bollean} />
+          <FormAvaliation obj={object} data={data} addProductCart={addProductCart} />
+        </div>
       </React.Fragment>
     );
   }
