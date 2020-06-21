@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactStars from 'react-stars';
 import Button from '../cardComponents/Button';
 import Input from '../cardComponents/Input';
 import './FormAvaliation.css';
@@ -21,6 +22,10 @@ class Forms extends Component {
     }
   }
 
+  ratingChanged(newRating) {
+    console.log(newRating);
+  }
+
   render() {
     const { amount } = this.state;
     const { addProductCart, obj } = this.props;
@@ -28,9 +33,13 @@ class Forms extends Component {
       <div>
         <div className="addItensCar">
           <h3>Quantidade:</h3>
-          <Button cName="MoreOrLess" onClick={() => this.lessProductsIncar()}>-</Button>
+          <Button cName="MoreOrLess" onClick={() => this.lessProductsIncar()}>
+            -
+          </Button>
           <div>{amount}</div>
-          <Button cName="MoreOrLess" onClick={() => this.moreProductsInCar()}>+</Button>
+          <Button cName="MoreOrLess" onClick={() => this.moreProductsInCar()}>
+            +
+          </Button>
           <Button
             test="product-detail-add-to-cart"
             cName="addToCar"
@@ -44,6 +53,7 @@ class Forms extends Component {
           <div className="inLineForm">
             <Input type="text" placeholder="Email" />
           </div>
+          <ReactStars count={5} onChange={this.ratingChanged} size={24} color2={'#ffd700'} />
           <Select />
           <textarea data-testid="product-detail-evaluation" placeholder="Mensagem(opcional)" />
           <Button>Avaliar</Button>
