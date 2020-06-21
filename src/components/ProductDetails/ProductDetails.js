@@ -27,6 +27,7 @@ class ProductDetails extends React.Component {
       thumbnail: data.thumbnail,
       title: data.title,
       price: data.price,
+      amount: data.available_quantity,
     };
     return (
       <React.Fragment>

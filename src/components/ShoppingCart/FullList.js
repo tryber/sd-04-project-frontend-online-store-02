@@ -15,17 +15,22 @@ class FullList extends React.Component {
   }
 
   setQuantitiesIDs() {
-    Object.keys(localStorage).forEach((key) => this.setState({ [key]: 1 }));
+    Object.keys(localStorage).forEach((key) => this.setState({
+      [key]: 1,
+      [`${key}_amount`]: JSON.parse(localStorage.getItem(key)).amount,
+    }));
   }
 
   handleClickRemove(e) {
     const { name } = e.target;
-    console.log(e.target.name);
     return this.setState((state) => ({ [name]: state[name] - 1 }));
   }
 
   handleClickAdd(e) {
     const { name } = e.target;
+    const amountAvaiable = this.state[`${name}_amount`];
+    const actualAmount = this.state[name];
+    if (actualAmount === amountAvaiable) return e.target.disable = true;
     return this.setState((state) => ({ [name]: state[name] + 1 }));
   }
 
@@ -38,7 +43,7 @@ class FullList extends React.Component {
           {productsCart.map((product) => (
             <div key={product.id}>
               <CartCard
-                quantity={this.state}
+                state={this.state}
                 name={product.id}
                 onClickRemove={this.handleClickRemove}
                 onClickAdd={this.handleClickAdd}

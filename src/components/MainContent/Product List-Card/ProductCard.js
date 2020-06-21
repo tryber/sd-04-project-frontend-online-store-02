@@ -15,6 +15,7 @@ class ProductCard extends React.Component {
       thumbnail: productData.thumbnail,
       title: productData.title,
       price: productData.price,
+      amount: productData.available_quantity,
     };
 
     return (

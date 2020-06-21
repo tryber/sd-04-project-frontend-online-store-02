@@ -8,7 +8,7 @@ class CartCard extends React.Component {
   render() {
     const {
       productData,
-      quantity,
+      state,
       onClickRemove,
       onClickAdd,
       name,
@@ -22,7 +22,7 @@ class CartCard extends React.Component {
           name={name}
           onClickRemove={onClickRemove}
           onClickAdd={onClickAdd}
-          quantity={quantity}
+          state={state}
         />
       </div>
     );
