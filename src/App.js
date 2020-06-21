@@ -58,7 +58,7 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <H inputValue={input} handleChange={this.handleChange}
-          handleClick={this.handleClick} items={items} classN={classN}
+            handleClick={this.handleClick} items={items} classN={classN}
           />
           <Switch>
             <Route exact path="/cart">
