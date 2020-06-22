@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import ReactStars from 'react-stars';
 import Button from '../cardComponents/Button';
 import Input from '../cardComponents/Input';
 import './FormAvaliation.css';
-import Select from '../cardComponents/Select';
 
 class Forms extends Component {
   constructor(props) {
@@ -44,7 +44,7 @@ class Forms extends Component {
           <div className="inLineForm">
             <Input type="text" placeholder="Email" />
           </div>
-          <Select />
+          <ReactStars count={5} size={32} color2={'#ffd700'} />
           <textarea data-testid="product-detail-evaluation" placeholder="Mensagem(opcional)" />
           <Button>Avaliar</Button>
         </form>

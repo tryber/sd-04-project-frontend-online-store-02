@@ -1,0 +1,10 @@
+.product-detail {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.imagem-produto {
+  min-width: 150px;
+}
