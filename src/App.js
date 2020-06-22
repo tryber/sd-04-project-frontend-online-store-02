@@ -7,6 +7,8 @@ import MainContent from './components/MainContent/MainContent';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import * as api from './services/api';
 import Checkout from './components/Checkout/Checkout';
+import CartNav from './components/CartNav';
+import Button from './components/cardComponents/Button';
 
 class App extends Component {
   constructor(props) {
@@ -15,6 +17,7 @@ class App extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.addProductCart = this.addProductCart.bind(this);
+    this.handleNav = this.handleNav.bind(this);
   }
 
   componentDidMount() {
@@ -52,11 +55,22 @@ class App extends Component {
     }, 1000);
   }
 
+  handleNav() {
+    const navTrue = document.querySelector('.true'); // pode ser null
+    const navFalse = document.querySelector('.false'); // pode ser null
+    if (navTrue == null) {
+      navFalse.className = 'true';
+    } else {
+      navTrue.className = 'false';
+    }
+  }
+
   render() {
     const { query, data, input, productsCart, classN } = this.state;
     return (
       <BrowserRouter>
         <H i={input} h={this.handleChange} c={this.handleClick} it={productsCart} s={classN} />
+        <CartNav productsCart={productsCart} onClick={this.handleNav} />
         <Switch>
           <Route exact path="/cart">
             <ShoppingCart productsCart={productsCart} />

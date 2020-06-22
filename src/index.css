@@ -11,3 +11,60 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.false {
+  background-color: white;
+  width: 400px;
+  height: max-content;
+  position: absolute;
+  left: -400px;
+  top: 200px;
+  animation-name: slide-out;
+  animation-duration: 1s;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.true {
+  background-color: grey;
+  width: 400px;
+  height: max-content;
+  position: absolute;
+  left: 0px;
+  top: 200px;
+  animation-name: slide-in;
+  animation-duration: 1s;
+  border-radius: 50px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nav-bar {
+  float: right;
+  border-radius: 50px;
+}
+
+@keyframes slide-in {
+  from {
+    margin-left: -400px;
+    background-color: white;
+  }
+  to {
+    margin-left: 0;
+    background-color: gray;
+  }
+}
+@keyframes slide-out {
+  from {
+    margin-left: 400px;
+    background-color: gray;
+  }
+  to {
+    margin-left: 0px;
+    background-color: white;
+  }
+}
