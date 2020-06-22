@@ -11,7 +11,7 @@ import Checkout from './components/Checkout/Checkout';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { query: false, data: [], input: '', productsCart: [], items: '', classN: '' };
+    this.state = { query: false, data: [], input: '', productsCart: [], classN: '' };
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.addProductCart = this.addProductCart.bind(this);
@@ -53,35 +53,31 @@ class App extends Component {
   }
 
   render() {
-    const { query, data, input, productsCart, items, classN } = this.state;
+    const { query, data, input, productsCart, classN } = this.state;
     return (
-      <div className="App">
-        <BrowserRouter>
-          <H inputValue={input} handleChange={this.handleChange}
-            handleClick={this.handleClick} items={items} classN={classN}
+      <BrowserRouter>
+        <H i={input} h={this.handleChange} c={this.handleClick} it={productsCart} s={classN} />
+        <Switch>
+          <Route exact path="/cart">
+            <ShoppingCart productsCart={productsCart} />
+          </Route>
+          <Route
+            path="/details/:id/:id2"
+            render={(props) => <ProductDetails {...props} addProductCart={this.addProductCart} />}
           />
-          <Switch>
-            <Route exact path="/cart">
-              <ShoppingCart productsCart={productsCart} />
-            </Route>
-            <Route
-              path="/details/:id/:id2"
-              render={
-                (props) => <ProductDetails {...props} addProductCart={this.addProductCart} />
-              }
+          <Route exact path="/">
+            <MainContent
+              handleClick={this.handleClick}
+              productsData={data.results}
+              addProductCart={this.addProductCart}
+              query={query}
             />
-            <Route exact path="/">
-              <MainContent
-                handleClick={this.handleClick}
-                productsData={data.results}
-                addProductCart={this.addProductCart}
-                query={query}
-              />
-            </Route>
-            <Route exact path="/checkout"><Checkout /></Route>
-          </Switch>
-        </BrowserRouter>
-      </div>
+          </Route>
+          <Route exact path="/checkout">
+            <Checkout />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
