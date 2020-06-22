@@ -13,58 +13,58 @@ code {
 }
 
 .false {
-  background-color: white;
-  width: 400px;
-  height: max-content;
-  position: absolute;
-  left: -400px;
-  top: 200px;
-  animation-name: slide-out;
+  align-items: center;
   animation-duration: 1s;
+  animation-name: slide-out;
+  background-color: white;
   border-radius: 50px;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  height: max-content;
+  left: -400px;
+  position: absolute;
+  top: 200px;
+  width: 400px;
 }
 
 .true {
-  background-color: grey;
-  width: 400px;
-  height: max-content;
-  position: absolute;
-  left: 0px;
-  top: 200px;
-  animation-name: slide-in;
+  align-items: center;
   animation-duration: 1s;
+  animation-name: slide-in;
+  background-color: grey;
   border-radius: 50px;
   border-radius: 50px;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  height: max-content;
+  left: 0px;
+  position: absolute;
+  top: 200px;
+  width: 400px;
 }
 
 .nav-bar {
-  float: right;
   border-radius: 50px;
+  float: right;
 }
 
 @keyframes slide-in {
   from {
-    margin-left: -400px;
     background-color: white;
+    margin-left: -400px;
   }
   to {
-    margin-left: 0;
     background-color: gray;
+    margin-left: 0;
   }
 }
 @keyframes slide-out {
   from {
-    margin-left: 400px;
     background-color: gray;
+    margin-left: 400px;
   }
   to {
-    margin-left: 0px;
     background-color: white;
+    margin-left: 0px;
   }
 }
