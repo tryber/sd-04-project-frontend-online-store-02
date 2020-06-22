@@ -1,3 +1,25 @@
 img {
   width: 50px;
 }
+
+.enphasys {
+  animation-duration: 1s;
+  animation-name: paragraph;
+  box-shadow: 1px 1px 5px 1px;
+}
+
+@keyframes paragraph {
+
+  0% {
+    color: black;
+  }
+
+  50% {
+    color: red;
+    font-size: 130%;
+  }
+
+  100% {
+    color: black;
+  }
+}

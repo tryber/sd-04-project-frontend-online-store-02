@@ -11,7 +11,7 @@ import Checkout from './components/Checkout/Checkout';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { query: false, data: [], input: '', productsCart: [] };
+    this.state = { query: false, data: [], input: '', productsCart: [], classN: '' };
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.addProductCart = this.addProductCart.bind(this);
@@ -19,6 +19,7 @@ class App extends Component {
 
   componentDidMount() {
     this.getCartItems();
+    this.cartState();
   }
 
   getCartItems() {
@@ -26,6 +27,10 @@ class App extends Component {
     const keys = Object.keys(localStorage);
     keys.forEach((key) => arr.push(JSON.parse(localStorage.getItem(key))));
     this.setState({ productsCart: arr });
+  }
+
+  cartState() {
+    this.setState({ items: localStorage });
   }
 
   handleClick(categoryId = '$CATEGORY_ID', query = '$QUERY') {
@@ -41,36 +46,38 @@ class App extends Component {
   addProductCart(object) {
     localStorage.setItem(object.id, JSON.stringify(object));
     this.getCartItems();
+    this.setState({ classN: 'enphasys' });
+    setTimeout(() => {
+      this.setState({ classN: '' });
+    }, 1000);
   }
 
   render() {
-    const { query, data, input, productsCart } = this.state;
+    const { query, data, input, productsCart, classN } = this.state;
     return (
-      <div className="App">
-        <BrowserRouter>
-          <H inputValue={input} handleChange={this.handleChange} handleClick={this.handleClick} />
-          <Switch>
-            <Route exact path="/cart">
-              <ShoppingCart productsCart={productsCart} />
-            </Route>
-            <Route
-              path="/details/:id/:id2"
-              render={
-                (props) => <ProductDetails {...props} addProductCart={this.addProductCart} />
-              }
+      <BrowserRouter>
+        <H i={input} h={this.handleChange} c={this.handleClick} it={productsCart} s={classN} />
+        <Switch>
+          <Route exact path="/cart">
+            <ShoppingCart productsCart={productsCart} />
+          </Route>
+          <Route
+            path="/details/:id/:id2"
+            render={(props) => <ProductDetails {...props} addProductCart={this.addProductCart} />}
+          />
+          <Route exact path="/">
+            <MainContent
+              handleClick={this.handleClick}
+              productsData={data.results}
+              addProductCart={this.addProductCart}
+              query={query}
             />
-            <Route exact path="/">
-              <MainContent
-                handleClick={this.handleClick}
-                productsData={data.results}
-                addProductCart={this.addProductCart}
-                query={query}
-              />
-            </Route>
-            <Route exact path="/checkout"><Checkout /></Route>
-          </Switch>
-        </BrowserRouter>
-      </div>
+          </Route>
+          <Route exact path="/checkout">
+            <Checkout />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     );
   }
 }

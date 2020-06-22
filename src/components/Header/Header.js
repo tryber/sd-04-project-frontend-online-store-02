@@ -8,7 +8,7 @@ import './Header.css';
 
 export default class Header extends React.Component {
   render() {
-    const { handleChange, handleClick, inputValue } = this.props;
+    const { h, c, i, it, s } = this.props;
     return (
       <header>
         <div className="row">
@@ -21,21 +21,22 @@ export default class Header extends React.Component {
         <div className="row">
           <Input
             type="text"
-            onChange={handleChange}
+            onChange={h}
             test="query-input"
             placeholder="Digite aqui sua pesquisa"
           />
           <Button
-            onClick={() => handleClick(undefined, inputValue)}
+            onClick={() => c(undefined, i)}
             test="query-button"
           >
             Pesquisar
           </Button>
           <Link to="/cart">
-            <CartButton />
+            <CartButton items={it} classN={s} />
           </Link>
         </div>
       </header>
     );
   }
 }
+// teste
