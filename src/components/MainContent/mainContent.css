@@ -1,5 +1,17 @@
 .row {
+  align-items: flex-start;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  margin: auto;
+}
+
+.asideDiv {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.listDiv {
+  width: 80%;
 }
