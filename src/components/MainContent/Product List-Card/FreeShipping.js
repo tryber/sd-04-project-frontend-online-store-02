@@ -9,7 +9,7 @@ class FreeShipping extends Component {
       return (
         <Image
           className="frete-gratis"
-          data-testid="free-shipping"
+          test="free-shipping"
           src="https://lojaminasnutri.com.br/content/uploads/2019/05/image-2.png"
           alt="Frete-gratis"
         />
