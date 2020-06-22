@@ -8,7 +8,7 @@ import './Header.css';
 
 export default class Header extends React.Component {
   render() {
-    const { h, handleClick, i, it, s } = this.props;
+    const { h, c, i, it, s } = this.props;
     return (
       <header>
         <div className="row">
@@ -26,7 +26,7 @@ export default class Header extends React.Component {
             placeholder="Digite aqui sua pesquisa"
           />
           <Button
-            onClick={() => handleClick(undefined, i)}
+            onClick={() => c(undefined, i)}
             test="query-button"
           >
             Pesquisar
