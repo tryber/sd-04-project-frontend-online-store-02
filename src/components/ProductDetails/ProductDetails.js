@@ -29,12 +29,8 @@ class ProductDetails extends React.Component {
     const { data, verify: bollean, price } = this.state;
     const { addProductCart } = this.props;
     const object = {
-      available: data.available_quantity,
-      quantity: 1,
-      id: data.id,
-      thumbnail: data.thumbnail,
-      title: data.title,
-      price: data.price,
+      available: data.available_quantity, quantity: 1, id: data.id,
+      thumbnail: data.thumbnail, title: data.title, price: data.price,
     };
     return (
       <div>
