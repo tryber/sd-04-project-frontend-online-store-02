@@ -29,7 +29,7 @@ export default class Header extends React.Component {
             onClick={() => c(undefined, i)}
             test="query-button"
           >
-            Pesquisar
+            <Link to="/">Pesquisar</Link>
           </Button>
           <Link to="/cart">
             <CartButton items={it} classN={s} />
