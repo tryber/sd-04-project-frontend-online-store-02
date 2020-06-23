@@ -3,6 +3,7 @@ import * as api from '../../services/api';
 import Image from '../cardComponents/Image';
 import FormAvaliation from './FormAvaliation';
 import FreeShipping from '../MainContent/Product List-Card/FreeShipping';
+import TechnicalAttributes from './TechnicalAttributes';
 import './ProductDetails.css';
 
 class ProductDetails extends React.Component {
@@ -13,13 +14,15 @@ class ProductDetails extends React.Component {
 
   componentDidMount() {
     const { match } = this.props;
-    api.getProductsFromCategoryAndQuery(match.params.id, match.params.id2).then((data) => {
-      this.setState({
-        data: data.results[0],
-        verify: data.results[0].shipping.free_shipping,
-        price: Number(data.results[0].price).toFixed(2),
+    api
+      .getProductsFromCategoryAndQuery(match.params.id, match.params.id2)
+      .then((data) => {
+        this.setState({
+          data: data.results[0],
+          verify: data.results[0].shipping.free_shipping,
+          price: Number(data.results[0].price).toFixed(2),
+        });
       });
-    });
   }
 
   render() {
@@ -34,15 +37,28 @@ class ProductDetails extends React.Component {
       price: data.price,
     };
     return (
-      <React.Fragment>
-        <div className="product-detail">
-          <h2 data-testid="product-detail-name">{data.title}</h2>
-          <p>{price}</p>
-          <Image className="imagem-produto" src={data.thumbnail} alt={data.title} />
-          <FreeShipping verify={bollean} />
-          <FormAvaliation obj={object} data={data} addProductCart={addProductCart} />
+      <div>
+        <div className="row">
+          <div className="productDetail">
+            <h2 data-testid="product-detail-name">{data.title}</h2>
+            <Image src={data.thumbnail} alt={data.title} />
+            <div className="price">
+              <p>R${price}</p>
+              <FreeShipping verify={bollean} />
+            </div>
+          </div>
+          <div className="productDetail">
+            <TechnicalAttributes data={data} />
+          </div>
         </div>
-      </React.Fragment>
+        <div className="product-detail">
+          <FormAvaliation
+            obj={object}
+            data={data}
+            addProductCart={addProductCart}
+          />
+        </div>
+      </div>
     );
   }
 }
