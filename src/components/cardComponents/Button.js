@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Button extends Component {
   render() {
-    const { children, test, onClick, cName, name } = this.props;
+    const { children, test, onClick, cName, name, mouseOver, mouseOut } = this.props;
     return (
       <button
         name={name}
@@ -10,6 +10,8 @@ class Button extends Component {
         onClick={onClick}
         data-testid={test}
         type="button"
+        onMouseOver={mouseOver}
+        onMouseOut={mouseOut}
       >
         {children}
       </button>

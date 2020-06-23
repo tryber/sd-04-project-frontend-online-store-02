@@ -7,6 +7,7 @@ import MainContent from './components/MainContent/MainContent';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import * as api from './services/api';
 import Checkout from './components/Checkout/Checkout';
+import CartNav from './components/ShoppingCart/NavCart/CartNav';
 
 class App extends Component {
   constructor(props) {
@@ -51,9 +52,11 @@ class App extends Component {
 
   render() {
     const { query, data, input, productsCart, classN } = this.state;
+
     return (
       <BrowserRouter>
         <H i={input} h={this.handleChange} c={this.handleClick} it={productsCart} s={classN} />
+        <CartNav productsCart={productsCart} />
         <Switch>
           <Route exact path="/cart">
             <ShoppingCart productsCart={productsCart} />

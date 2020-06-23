@@ -4,7 +4,7 @@ import './CartButton.css';
 
 class CartButton extends React.Component {
   render() {
-    const { items, classN } = this.props;
+    const { items, classN, mouseOver, mouseOut } = this.props;
     return (
       <div>
         <span data-testid="shopping-cart-size" className={classN}>{items.length}</span>
@@ -12,6 +12,8 @@ class CartButton extends React.Component {
           <Image
             src="https://image.flaticon.com/icons/svg/57/57629.svg"
             alt="cart shopping icon"
+            mouseOver={mouseOver}
+            mouseOut={mouseOut}
           />
         </div>
       </div>
