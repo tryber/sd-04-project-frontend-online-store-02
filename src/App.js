@@ -20,7 +20,6 @@ class App extends Component {
 
   componentDidMount() {
     this.setCartItems();
-    const a = document.querySelector('.cart');
   }
 
   setCartItems() {
