@@ -11,3 +11,89 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.false {
+  align-items: center;
+  animation-duration: 1s;
+  animation-name: slide-out;
+  background-color: white;
+  border: lightgray 1px solid;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  position: absolute;
+  right: -400px;
+  top: 100px;
+  width: 400px;
+}
+
+.true {
+  align-items: center;
+  animation-duration: 1s;
+  animation-name: slide-in;
+  background-color: grey;
+  border: lightgray 1px solid;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  position: absolute;
+  right: 0px;
+  top: 100px;
+  width: 400px;
+}
+
+.nav-bar {
+  border-radius: 50px;
+  float: right;
+}
+
+.cart-card {
+  border-top: lightgray 1px solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 15px 20px 15px;
+}
+
+.cart-card h3 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.cart-card span {
+  align-items: center;
+  display: flex;
+  font-weight: 700;
+  justify-content: flex-end;
+}
+
+.cart-card img {
+  border-radius: 20px;
+}
+
+@keyframes slide-in {
+  from {
+    background-color: white;
+    margin-right: -400px;
+    opacity: 0%;
+  }
+  to {
+    background-color: gray;
+    margin-right: 0;
+    opacity: 100%;
+  }
+}
+@keyframes slide-out {
+  from {
+    background-color: gray;
+    margin-right: 400px;
+    opacity: 100%;
+  }
+  to {
+    background-color: white;
+    margin-right: 0px;
+    opacity: 0%;
+  }
+}

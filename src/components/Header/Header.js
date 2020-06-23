@@ -7,6 +7,22 @@ import CartButton from '../ShoppingCart/CartButton';
 import './Header.css';
 
 export default class Header extends React.Component {
+  constructor() {
+    super();
+    this.hoverCart = this.hoverCart.bind(this);
+    this.noHover = this.noHover.bind(this);
+  }
+
+  hoverCart() {
+    const falseCart = document.querySelector('.cart');
+    falseCart.className = 'cart true';
+  }
+
+  noHover = () => {
+    const falseCart = document.querySelector('.cart');
+    falseCart.className = 'cart false';
+  }
+
   render() {
     const { h, c, i, it, s } = this.props;
     return (
@@ -28,11 +44,12 @@ export default class Header extends React.Component {
           <Button
             onClick={() => c(undefined, i)}
             test="query-button"
+            mouseOver={this.hoverCart}
           >
             Pesquisar
           </Button>
           <Link to="/cart">
-            <CartButton items={it} classN={s} />
+            <CartButton items={it} classN={s} mouseOver={this.hoverCart} mouseOut={this.noHover} />
           </Link>
         </div>
       </header>
