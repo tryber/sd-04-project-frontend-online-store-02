@@ -18,19 +18,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.getCartItems();
-    this.cartState();
+    this.setCartItems();
   }
 
-  getCartItems() {
-    const arr = [];
-    const keys = Object.keys(localStorage);
-    keys.forEach((key) => arr.push(JSON.parse(localStorage.getItem(key))));
+  setCartItems() {
+    const arr = Object.keys(localStorage).map((elem) => JSON.parse(localStorage.getItem(elem)));
     this.setState({ productsCart: arr });
-  }
-
-  cartState() {
-    this.setState({ items: localStorage });
   }
 
   handleClick(categoryId = '$CATEGORY_ID', query = '$QUERY') {
@@ -44,8 +37,12 @@ class App extends Component {
   }
 
   addProductCart(object) {
-    localStorage.setItem(object.id, JSON.stringify(object));
-    this.getCartItems();
+    if (localStorage.getItem(object.id)) {
+      const newObj = JSON.parse(localStorage.getItem(object.id));
+      newObj.quantity += 1;
+      localStorage.setItem(newObj.id, JSON.stringify(newObj));
+    } else localStorage.setItem(object.id, JSON.stringify(object));
+    this.setCartItems();
     this.setState({ classN: 'enphasys' });
     setTimeout(() => {
       this.setState({ classN: '' });

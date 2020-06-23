@@ -15,18 +15,25 @@ class FullList extends React.Component {
   }
 
   setQuantitiesIDs() {
-    Object.keys(localStorage).forEach((key) => this.setState({ [key]: 1 }));
+    const { productsCart } = this.props;
+    productsCart.forEach((key) => this.setState({ [key.id]: key.quantity }));
+    // const arr = Object.keys(localStorage).map((elem) => JSON.parse(localStorage.getItem(elem)));
   }
 
   handleClickRemove(e) {
     const { name } = e.target;
-    console.log(e.target.name);
-    return this.setState((state) => ({ [name]: state[name] - 1 }));
+    const newObj = JSON.parse(localStorage.getItem(name));
+    newObj.quantity -= 1;
+    localStorage.setItem(newObj.id, JSON.stringify(newObj));
+    this.setState((state) => ({ [name]: state[name] - 1 }));
   }
 
   handleClickAdd(e) {
     const { name } = e.target;
-    return this.setState((state) => ({ [name]: state[name] + 1 }));
+    const newObj = JSON.parse(localStorage.getItem(name));
+    newObj.quantity += 1;
+    localStorage.setItem(newObj.id, JSON.stringify(newObj));
+    this.setState((state) => ({ [name]: state[name] + 1 }));
   }
 
   render() {
