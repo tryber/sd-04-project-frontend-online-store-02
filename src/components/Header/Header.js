@@ -45,9 +45,7 @@ export default class Header extends React.Component {
             test="query-input"
             placeholder="Digite aqui sua pesquisa"
           />
-          <Button onClick={() => c(undefined, i)} test="query-button">
-            Pesquisar
-          </Button>
+          <Button onClick={() => c(undefined, i)} test="query-button">Pesquisar</Button>
           <Link to="/cart">
             <CartButton
               items={it}
