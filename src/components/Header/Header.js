@@ -9,18 +9,22 @@ import './Header.css';
 export default class Header extends React.Component {
   constructor() {
     super();
+    this.a = 'Mostrou';
+    this.b = 'Escondeu';
     this.hoverCart = this.hoverCart.bind(this);
     this.noHover = this.noHover.bind(this);
   }
 
   hoverCart() {
-    const falseCart = document.querySelector('.cart');
-    falseCart.className = 'cart true';
+    const navBar = document.querySelector('.cart');
+    navBar.className = 'cart true';
+    this.a = this.b;
   }
 
-  noHover = () => {
-    const falseCart = document.querySelector('.cart');
-    falseCart.className = 'cart false';
+  noHover() {
+    const navBar = document.querySelector('.cart');
+    navBar.className = 'cart false';
+    this.a = this.b;
   }
 
   render() {
@@ -41,15 +45,16 @@ export default class Header extends React.Component {
             test="query-input"
             placeholder="Digite aqui sua pesquisa"
           />
-          <Button
-            onClick={() => c(undefined, i)}
-            test="query-button"
-            mouseOver={this.hoverCart}
-          >
+          <Button onClick={() => c(undefined, i)} test="query-button">
             Pesquisar
           </Button>
           <Link to="/cart">
-            <CartButton items={it} classN={s} mouseOver={this.hoverCart} mouseOut={this.noHover} />
+            <CartButton
+              items={it}
+              classN={s}
+              mouseOver={this.hoverCart}
+              mouseOut={this.noHover}
+            />
           </Link>
         </div>
       </header>
