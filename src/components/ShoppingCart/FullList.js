@@ -25,15 +25,17 @@ class FullList extends React.Component {
     const newObj = JSON.parse(localStorage.getItem(name));
     newObj.quantity -= 1;
     localStorage.setItem(newObj.id, JSON.stringify(newObj));
-    this.setState((state) => ({ [name]: state[name] - 1 }));
+    if (newObj.quantity >= 0) this.setState((state) => ({ [name]: state[name] - 1 }));
   }
 
   handleClickAdd(e) {
     const { name } = e.target;
     const newObj = JSON.parse(localStorage.getItem(name));
     newObj.quantity += 1;
-    localStorage.setItem(newObj.id, JSON.stringify(newObj));
-    this.setState((state) => ({ [name]: state[name] + 1 }));
+    if (newObj.available >= newObj.quantity) {
+      localStorage.setItem(newObj.id, JSON.stringify(newObj));
+      this.setState((state) => ({ [name]: state[name] + 1 }));
+    }
   }
 
   render() {

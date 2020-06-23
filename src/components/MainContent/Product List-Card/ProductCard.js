@@ -11,6 +11,7 @@ class ProductCard extends React.Component {
   render() {
     const { productData, addProductCart } = this.props;
     const object = {
+      available: productData.available_quantity,
       quantity: 1,
       id: productData.id,
       thumbnail: productData.thumbnail,
