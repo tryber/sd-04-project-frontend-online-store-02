@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactStars from 'react-stars';
+// import ReactStars from 'react-stars';
 import Button from '../cardComponents/Button';
 import Input from '../cardComponents/Input';
 import './FormAvaliation.css';
@@ -34,7 +34,7 @@ class Forms extends Component {
           <Button
             test="product-detail-add-to-cart"
             cName="addToCar"
-            onClick={() => addProductCart(obj)}
+            onClick={() => addProductCart(obj, amount)}
           >
             Adicionar ao carrinho
           </Button>
@@ -44,7 +44,7 @@ class Forms extends Component {
           <div className="inLineForm">
             <Input type="text" placeholder="Email" />
           </div>
-          <ReactStars count={5} size={32} color2={'#ffd700'} />
+          {/* <ReactStars count={5} size={32} color2={'#ffd700'} /> */}
           <textarea data-testid="product-detail-evaluation" placeholder="Mensagem(opcional)" />
           <Button>Avaliar</Button>
         </form>
