@@ -36,12 +36,14 @@ class App extends Component {
     this.setState({ input: e.target.value });
   }
 
-  addProductCart(object) {
+  addProductCart(object, amont = 1) {
+    const objAux = object;
+    objAux.quantity = amont;
     if (localStorage.getItem(object.id)) {
       const newObj = JSON.parse(localStorage.getItem(object.id));
-      newObj.quantity += 1;
+      newObj.quantity += amont;
       localStorage.setItem(newObj.id, JSON.stringify(newObj));
-    } else localStorage.setItem(object.id, JSON.stringify(object));
+    } else localStorage.setItem(object.id, JSON.stringify(objAux));
     this.setCartItems();
     this.setState({ classN: 'enphasys' });
     setTimeout(() => {
