@@ -28,13 +28,9 @@ class Forms extends Component {
       <div>
         <div className="addItensCar">
           <h3>Quantidade:</h3>
-          <Button cName="MoreOrLess" onClick={() => this.lessProductsIncar()}>
-            -
-          </Button>
+          <Button cName="MoreOrLess" onClick={() => this.lessProductsIncar()}>-</Button>
           <div>{amount}</div>
-          <Button cName="MoreOrLess" onClick={() => this.moreProductsInCar()}>
-            +
-          </Button>
+          <Button cName="MoreOrLess" onClick={() => this.moreProductsInCar()}>+</Button>
           <Button
             test="product-detail-add-to-cart"
             cName="addToCar"
