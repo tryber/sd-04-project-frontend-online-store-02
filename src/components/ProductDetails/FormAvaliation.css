@@ -26,6 +26,22 @@
   margin-left: 10px;
 }
 
+.formDetail {
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  justify-content: center;
+  margin: 1vh 0;
+  overflow: auto;
+  padding: 1px;
+  text-align: center;
+  width: 600px;
+}
+
 form {
   align-items: center;
   display: flex;

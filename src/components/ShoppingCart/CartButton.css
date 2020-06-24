@@ -5,6 +5,7 @@ img {
 .enphasys {
   animation-duration: 1s;
   animation-name: paragraph;
+  animation-timing-function: linear;
   box-shadow: 1px 1px 5px 1px;
 }
 
