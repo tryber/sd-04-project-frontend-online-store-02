@@ -25,7 +25,7 @@ class Forms extends Component {
     const { amount } = this.state;
     const { addProductCart, obj } = this.props;
     return (
-      <div>
+      <div className="formDetail">
         <div className="addItensCar">
           <h3>Quantidade:</h3>
           <Button cName="MoreOrLess" onClick={() => this.lessProductsIncar()}>-</Button>
