@@ -5,22 +5,23 @@ img {
 .enphasys {
   animation-duration: 1s;
   animation-name: paragraph;
-  animation-timing-function: linear;
-  box-shadow: 1px 1px 5px 1px;
+  animation-timing-function: ease-in;
 }
 
 @keyframes paragraph {
 
   0% {
-    color: black;
+    font-size: 100%;
+    color: white;
   }
 
   50% {
-    color: red;
+    color: black;
     font-size: 130%;
   }
 
   100% {
-    color: black;
+    font-size: 100%;
+    color: white;
   }
 }

@@ -7,7 +7,7 @@ class MainContent extends React.Component {
   render() {
     const { handleClick, query, productsData, addProductCart } = this.props;
     return (
-      <div className="row">
+      <div className="main-row">
         <div className="asideDiv">
           <Aside handleClick={handleClick} />
         </div>
