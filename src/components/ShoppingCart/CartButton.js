@@ -9,7 +9,7 @@ class CartButton extends React.Component {
       <div>
         <div className="rounded">
           <span data-testid="shopping-cart-size" className={classN}>
-            {items.length}
+            {items.reduce((acc, item) => acc + item.quantity, 0)}
           </span>
         </div>
         <div className="image" data-testid="shopping-cart-button">
