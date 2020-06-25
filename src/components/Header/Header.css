@@ -1,6 +1,5 @@
 .row {
   align-items: center;
-  background-color:;
   display: flex;
 }
 
@@ -26,9 +25,9 @@
 
 .rounded {
   align-items: center;
+  border: black 1px solid;
   background-color: black;
   border-radius: 11px;
-  border: black 1px solid;
   display: flex;
   float: right;
   height: 22px;
@@ -40,7 +39,7 @@
 .row button {
   background-color: lightgray;
   border-radius: 5px;
-  border: 1px black solid ;
+  border: 1px black solid;
   box-sizing: border-box;
   font-size: large;
   margin: 0 0 0 15px;
@@ -49,8 +48,8 @@
 
 input {
   background-color: lightgray;
-  border-radius: 5px;
   border: 1px black solid;
+  border-radius: 5px;
   box-sizing: border-box;
   font-size: large;
   margin: 8px 0;
@@ -59,7 +58,6 @@ input {
 
 header {
   align-items: center;
-  background-color: rgb(107, 106, 106);
   background: linear-gradient(rgba(107, 106, 106, 0.575), rgb(107, 106, 106));
   display: flex;
   font-family: sans-serif;

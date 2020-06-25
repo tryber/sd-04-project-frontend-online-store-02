@@ -11,8 +11,8 @@ img {
 @keyframes paragraph {
 
   0% {
-    font-size: 100%;
     color: white;
+    font-size: 100%;
   }
 
   50% {
@@ -21,7 +21,7 @@ img {
   }
 
   100% {
-    font-size: 100%;
     color: white;
+    font-size: 100%;
   }
 }
