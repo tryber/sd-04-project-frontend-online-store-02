@@ -15,6 +15,7 @@ export default class Header extends React.Component {
           <Image
             src="https://img.icons8.com/color/48/000000/house-lannister.png"
             alt="logo beasts"
+            className="fera"
           />
           <h1>Fera Peluda</h1>
         </div>
