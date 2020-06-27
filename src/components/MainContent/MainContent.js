@@ -10,10 +10,15 @@ class MainContent extends React.Component {
     this.state = { data: [] };
   }
 
-  sortValue() {
+  sortValue(bollean) {
     const { productsData } = this.props;
-    const orderValue = productsData.sort((a, b) => a.price - b.price);
-    this.setState({ data: orderValue });
+    if (bollean) {
+      const orderValue = productsData.sort((a, b) => a.price - b.price);
+      this.setState({ data: orderValue });
+    } else {
+      const orderValue = productsData.sort((a, b) => b.price - a.price);
+      this.setState({ data: orderValue });
+    }
   }
 
   render() {
@@ -24,7 +29,8 @@ class MainContent extends React.Component {
         <div className="asideDiv">
           <Aside handleClick={handleClick} />
         </div>
-        <Button onClick={() => this.sortValue()}>Ordenar por valor</Button>
+        <Button onClick={() => this.sortValue(true)}>Ordenar por menor valor</Button>
+        <Button onClick={() => this.sortValue(null)}>Ordenar por Maior valor</Button>
         <div className="listDiv">
           <ProductList
             productsData={productsData || data}
